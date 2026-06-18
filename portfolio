@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Poirier — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --surface2: #1a1e2a;
+      --border: #232838;
+      --accent: #4f8ef7;
+      --accent2: #a78bfa;
+      --accent3: #34d399;
+      --text: #e8eaf0;
+      --text-muted: #8891a8;
+      --text-dim: #555e75;
+      --mono: 'Space Mono', monospace;
+      --sans: 'Space Grotesk', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,15,20,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 58px;
+    }
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      display: block;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: color 0.18s, background 0.18s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text);
+      background: var(--surface2);
+    }
+
+    /* ── PAGES ───────────────────────────────────────── */
+    .page { display: none; padding: 3rem 2rem 5rem; max-width: 900px; margin: 0 auto; }
+    .page.active { display: block; }
+
+    /* ── SECTION LABELS ──────────────────────────────── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    p { color: var(--text-muted); margin-bottom: 0.9rem; }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── HOME PAGE ───────────────────────────────────── */
+    .hero {
+      padding: 4rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.3rem 0.9rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent3);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent3);
+    }
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 600px;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .contact-line {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .contact-line a {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.15s;
+    }
+    .contact-line a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── GRID CARDS ──────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem 1.5rem;
+      cursor: pointer;
+      transition: border-color 0.18s, transform 0.18s;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .card h3 { font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .card p { font-size: 0.82rem; color: var(--text-dim); margin: 0; }
+
+    /* ── COMPÉTENCES ─────────────────────────────────── */
+    .competence-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .competence-block::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      border-radius: 3px 0 0 3px;
+    }
+    .cb-traiter::before { background: var(--accent); }
+    .cb-analyser::before { background: var(--accent2); }
+    .cb-valoriser::before { background: var(--accent3); }
+    .cb-modeliser::before { background: #fb923c; }
+
+    .comp-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .comp-subtitle {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .comp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.72rem;
+      font-family: var(--mono);
+      color: var(--text-muted);
+    }
+
+    /* ── PROJETS ─────────────────────────────────────── */
+    .projet-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.18s;
+    }
+    .projet-item:hover { border-color: var(--accent2); }
+
+    .projet-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .projet-num {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .projet-links { display: flex; gap: 0.5rem; flex-shrink: 0; }
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.75rem;
+      font-family: var(--mono);
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .btn-link:hover { color: var(--text); border-color: var(--accent); text-decoration: none; }
+
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+    .badge {
+      background: rgba(79,142,247,0.1);
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 5px;
+      padding: 0.18rem 0.55rem;
+      font-size: 0.7rem;
+      font-family: var(--mono);
+      color: var(--accent);
+    }
+    .badge.purple {
+      background: rgba(167,139,250,0.1);
+      border-color: rgba(167,139,250,0.25);
+      color: var(--accent2);
+    }
+    .badge.green {
+      background: rgba(52,211,153,0.1);
+      border-color: rgba(52,211,153,0.25);
+      color: var(--accent3);
+    }
+    .badge.orange {
+      background: rgba(251,146,60,0.1);
+      border-color: rgba(251,146,60,0.25);
+      color: #fb923c;
+    }
+
+    /* ── LOGICIELS ───────────────────────────────────── */
+    .logiciel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .logiciel-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+    }
+    .logiciel-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+    .logiciel-level {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+    .level-bar {
+      height: 3px;
+      border-radius: 3px;
+      background: var(--border);
+      overflow: hidden;
+    }
+    .level-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    /* ── ALTERNANCE ──────────────────────────────────── */
+    .stage-header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .stage-company {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .stage-meta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+    .stage-badge {
+      background: rgba(52,211,153,0.15);
+      border: 1px solid rgba(52,211,153,0.3);
+      border-radius: 8px;
+      padding: 0.4rem 1rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent3);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .section-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .section-block h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+      color: var(--accent);
+    }
+
+    .db-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 600px) {
+      .db-grid { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+    .db-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+    .db-card-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .db-card p { font-size: 0.8rem; color: var(--text-dim); }
+
+    /* ── DIVIDER ─────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('home')">LP.portfolio</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('competences')" id="nav-competences">Compétences</a></li>
+    <li><a href="#" onclick="showPage('projets')" id="nav-projets">Projets</a></li>
+    <li><a href="#" onclick="showPage('logiciels')" id="nav-logiciels">Logiciels</a></li>
+    <li><a href="#" onclick="showPage('alternance')" id="nav-alternance">Alternance</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════ HOME ═══════════════════════════════ -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-tag">BUT Science des Données · Parcours EMS · 2ème année</div>
+    <h1>Lucas Poirier</h1>
+    <p>
+      Étudiant en <strong style="color:var(--text)">BUT Science des Données</strong> à l'IUT, 
+      spécialisation <strong style="color:var(--text)">Exploration et Modélisation Statistique</strong>. 
+      Je développe des compétences en modélisation statistique, traitement de données, 
+      analyse décisionnelle et datavisualisation à travers des projets académiques et une alternance en actuariat.
+    </p>
+    <p>
+      Passionné par l'analyse de données dans des domaines variés — assurance, économie, 
+      sciences — j'utilise R, Python, SQL, SAS et Power BI pour extraire de la valeur des données complexes.
+    </p>
+    <div class="contact-line">
+      <a href="mailto:lucas.poirier@etudiant.univ.fr">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        lucas.poirier@etudiant.univ.fr
+      </a>
+      <a href="https://lucas-poirier.shinyapps.io/Satisfaction_Passagers_Aerien/" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        App R Shiny
+      </a>
+    </div>
+  </div>
+
+  <div class="eyebrow">Navigation</div>
+  <div class="card-grid">
+    <a class="card" href="#" onclick="showPage('competences')">
+      <div class="card-icon">🎯</div>
+      <h3>Compétences</h3>
+      <p>4 compétences du référentiel BUT SD parcours EMS</p>
+    </a>
+    <a class="card" href="#" onclick="showPage('projets')">
+      <div class="card-icon">📊</div>
+      <h3>Projets</h3>
+      <p>SAÉ réalisées au cours des semestres 1 à 4</p>
+    </a>
+    <a class="card" href="#" onclick="showPage('logiciels')">
+      <div class="card-icon">🛠️</div>
+      <h3>Logiciels</h3>
+      <p>Outils et langages maîtrisés en science des données</p>
+    </a>
+    <a class="card" href="#" onclick="showPage('alternance')">
+      <div class="card-icon">🏢</div>
+      <h3>Alternance</h3>
+      <p>MMA — Actuariat & tableaux de bord SAS VA</p>
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ COMPÉTENCES ═══════════════════════════════ -->
+<div class="page" id="page-competences">
+  <div class="eyebrow">Référentiel BUT SD · Parcours EMS</div>
+  <h1>Compétences</h1>
+  <p>Le parcours <em>Exploration et modélisation statistique</em> du BUT Science des Données s'articule autour de quatre compétences fondamentales. Chacune est illustrée par les apprentissages critiques développés au fil des semestres.</p>
+
+  <div class="divider"></div>
+
+  <div class="competence-block cb-traiter">
+    <div class="comp-subtitle">Compétence 1</div>
+    <div class="comp-title" style="color:var(--accent)">Traiter des données à des fins décisionnelles</div>
+    <p>Intervenir à toutes les étapes du cycle de vie de la donnée — de l'extraction à la suppression. Concevoir et implémenter des bases de données relationnelles, rédiger des programmes structurés et exploiter des outils de reporting.</p>
+    <div class="comp-tags">
+      <span class="tag">SQL / Access</span>
+      <span class="tag">Bases de données relationnelles</span>
+      <span class="tag">ETL</span>
+      <span class="tag">Power BI</span>
+      <span class="tag">SAS</span>
+      <span class="tag">Reporting</span>
+    </div>
+  </div>
+
+  <div class="competence-block cb-analyser">
+    <div class="comp-subtitle">Compétence 2</div>
+    <div class="comp-title" style="color:var(--accent2)">Analyser statistiquement les données</div>
+    <p>Mettre en évidence les grandes tendances, les informations principales et les relations entre variables. Appliquer des techniques adaptées aux données complexes (massives, mal structurées, flux) en tenant compte du contexte inférentiel.</p>
+    <div class="comp-tags">
+      <span class="tag">Statistique descriptive</span>
+      <span class="tag">Tests d'hypothèses</span>
+      <span class="tag">ACP</span>
+      <span class="tag">Régression</span>
+      <span class="tag">R / Python</span>
+      <span class="tag">Séries temporelles</span>
+    </div>
+  </div>
+
+  <div class="competence-block cb-valoriser">
+    <div class="comp-subtitle">Compétence 3</div>
+    <div class="comp-title" style="color:var(--accent3)">Valoriser une production dans un contexte professionnel</div>
+    <p>S'adapter au niveau d'expertise et au statut du destinataire, s'exprimer en français comme en anglais, respecter les aspects éthiques et réglementaires, interpréter et contextualiser les résultats avec esprit critique.</p>
+    <div class="comp-tags">
+      <span class="tag">R Markdown / Quarto</span>
+      <span class="tag">R Shiny</span>
+      <span class="tag">Datavisualisation</span>
+      <span class="tag">Présentation orale</span>
+      <span class="tag">Anglais technique</span>
+      <span class="tag">RGPD</span>
+    </div>
+  </div>
+
+  <div class="competence-block cb-modeliser">
+    <div class="comp-subtitle">Compétence 4</div>
+    <div class="comp-title" style="color:#fb923c">Modéliser les données dans un cadre statistique</div>
+    <p>Choisir le modèle adapté à la situation, maîtriser sa qualité et s'adapter aux spécificités (données, enjeux, méthodes) d'un domaine d'application particulier — santé, marketing, assurance, qualité, socio-démographie.</p>
+    <div class="comp-tags">
+      <span class="tag">Modèle linéaire</span>
+      <span class="tag">Sélection de modèles</span>
+      <span class="tag">ACP / ACM</span>
+      <span class="tag">Classification</span>
+      <span class="tag">Prévision temporelle</span>
+      <span class="tag">Actuariat</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PROJETS ═══════════════════════════════ -->
+<div class="page" id="page-projets">
+  <div class="eyebrow">Situations d'Apprentissage et d'Évaluation</div>
+  <h1>Projets</h1>
+  <p>Ensemble des SAÉ réalisées au cours des quatre semestres du BUT SD, couvrant les compétences du parcours EMS.</p>
+
+  <div class="divider"></div>
+
+  <!-- SAÉ 1.04 + 1.05 -->
+  <div class="projet-item">
+    <div class="projet-header">
+      <div>
+        <div class="projet-num">SAÉ · 1.04 & 1.05</div>
+        <h2>Apprendre en situation & Présentation en anglais d'un territoire</h2>
+      </div>
+    </div>
+    <p>Découverte de la production de données en entreprise, analyse d'un contexte économique et culturel territorial, restitution orale en anglais devant un auditoire professionnel.</p>
+    <div class="skill-badges">
+      <span class="badge green">Valoriser</span>
+      <span class="badge">Traiter</span>
+      <span class="badge purple">Anglais de spécialité</span>
+    </div>
+  </div>
+
+  <!-- SAÉ 1.06 -->
+  <div class="projet-item">
+    <div class="projet-header">
+      <div>
+        <div class="projet-num">SAÉ · 1.06</div>
+        <h2>Mise en œuvre d'une enquête</h2>
+      </div>
+    </div>
+    <p>Conception d'un questionnaire, collecte et traitement des réponses, analyse des données d'enquête et restitution des résultats avec visualisations adaptées.</p>
+    <div class="skill-badges">
+      <span class="badge blue">Analyser</span>
+      <span class="badge green">Valoriser</span>
+      <span class="badge purple">Sondage</span>
+    </div>
+  </div>
+
+  <!-- SAÉ 2.01 -->
+  <div class="projet-item">
+    <div class="projet-header">
+      <div>
+        <div class="projet-num">SAÉ · 2.01</div>
+        <h2>Conception et implémentation d'une base de données</h2>
+      </div>
+      <div class="projet-liens">
+        <a class="btn-link" href="#" title="Base de données Access disponible">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Base Access
+        </a>
+      </div>
+    </div>
+    <p>Projet Compudistri : conception du dictionnaire des données, modélisation du schéma relationnel sous Looping et IBeasy+, import sur Access, rédaction de 42 requêtes SQL pour interroger les articles, clients, fournisseurs et factures.</p>
+    <div class="skill-badges">
+      <span class="badge">Traiter</span>
+      <span class="badge orange">SQL</span>
+      <span class="badge orange">Access</span>
+      <span class="badge orange">Modélisation BDD</span>
+    </div>
+  </div>
+
+  <!-- SAÉ 2.03 -->
+  <div class="projet-item">
+    <div class="projet-header">
+      <div>
+        <div class="projet-num">SAÉ · 2.03</div>
+        <h2>Régression sur données réelles</h2>
+      </div>
+    </div>
+    <p>Analyse de données réelles avec R, ajustement de modèles de régression, validation des hypothèses, interprétation des résultats et rapport R Markdown structuré (réalisé avec Killian Le Guenic).</p>
+    <div class="skill-badges">
+      <span class="badge orange">Modéliser</span>
+      <span class="badge blue">Analyser</span>
+      <span class="badge purple">R</span>
+      <span class="badge purple">R Markdown</span>
+    </div>
+  </div>
+
+  <!-- SAÉ 2.06 -->
+  <div class="projet-item">
+    <div class="projet-header">
+      <div>
+        <div class="projet-num">SAÉ · 2.06</div>
+        <h2>Analyse de données, reporting et datavisualisation</h2>
+      </div>
+      <div class="projet-liens">
+        <a class="btn-link" href="#" title="Tableau de bord Power BI">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 17V13m4 4V9m4 8V5"/></svg>
+          Power BI
+        </a>
+      </div>
+    </div>
+    <p>Tableau de bord interactif réalisé avec Power BI (fichier Bricolib) : collecte, nettoyage et modélisation des données, construction d'indicateurs de performance, mise en page et storytelling visuel pour faciliter la prise de décision.</p>
+    <div class="skill-badges">
+      <span class="badge">Traiter</span>
+      <span class="badge blue">Analyser</span>
+      <span class="badge green">Valoriser</span>
+      <span class="badge orange">Power BI</span>
+    </div>
+  </div>
+
+  <!-- SAÉ 3.EMS.01 -->
+  <div class="projet-item">
+    <div class="projet-header">
+      <div>
+        <div class="projet-num">SAÉ · 3.EMS.01</div>
+        <h2>Recueil et analyse de données par échantillonnage ou plan d'expérience</h2>
+      </div>
+    </div>
+    <p>Mise en œuvre d'une méthode de sondage ou d'un plan d'expérience, estimation des paramètres avec intervalles de confiance, analyse des biais et validation de la représentativité.</p>
+    <div class="skill-badges">
+      <span class="badge orange">Modéliser</span>
+      <span class="badge blue">Analyser</span>
+      <span class="badge purple">Techniques de sondage</span>
+    </div>
+  </div>
+
+  <!-- SAÉ 4.EMS.01 -->
+  <div class="projet-item">
+    <div class="projet-header">
+      <div>
+        <div class="projet-num">SAÉ · 4.EMS.01</div>
+        <h2>Expliquer ou prédire une variable quantitative à partir de plusieurs facteurs</h2>
+      </div>
+      <div class="projet-liens">
+        <a class="btn-link" href="#" title="Rapport disponible">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Rapport Boston
+        </a>
+      </div>
+    </div>
+    <p>Prédiction du prix médian des logements à Boston : analyse univariée et bivariée, construction de modèles de régression linéaire multiple, sélection par méthodes forward/backward/stepwise/exhaustive, évaluation par RMSE. Réalisé avec Q. Courson, C. Lesbastad, P. Uguen.</p>
+    <div class="skill-badges">
+      <span class="badge orange">Modéliser</span>
+      <span class="badge blue">Analyser</span>
+      <span class="badge purple">Régression multiple</span>
+      <span class="badge purple">Sélection de modèles</span>
+      <span class="badge purple">R</span>
+    </div>
+  </div>
+
+  <!-- SAÉ 4.02 -->
+  <div class="projet-item">
+    <div class="projet-header">
+      <div>
+        <div class="projet-num">SAÉ · 4.02</div>
+        <h2>Reporting d'une analyse multivariée</h2>
+      </div>
+      <div class="projet-liens">
+        <a class="btn-link" href="https://lucas-poirier.shinyapps.io/Satisfaction_Passagers_Aerien/" target="_blank">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          App R Shiny
+        </a>
+      </div>
+    </div>
+    <p>Analyse en Composantes Principales (ACP) sur la satisfaction des passagers aériens. Application R Shiny interactive permettant d'explorer les résultats : graphes des individus et des variables, cercle des corrélations, choix du nombre d'axes, interprétation des composantes. L'application restitue de manière dynamique toute l'analyse multivariée.</p>
+    <div class="skill-badges">
+      <span class="badge orange">Modéliser</span>
+      <span class="badge green">Valoriser</span>
+      <span class="badge purple">ACP</span>
+      <span class="badge purple">R Shiny</span>
+      <span class="badge purple">Analyse multivariée</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════ LOGICIELS ═══════════════════════════════ -->
+<div class="page" id="page-logiciels">
+  <div class="eyebrow">Environnement technique</div>
+  <h1>Logiciels & Outils</h1>
+  <p>Aperçu des technologies utilisées dans le cadre du BUT SD et de l'alternance.</p>
+
+  <div class="divider"></div>
+
+  <div class="eyebrow" style="margin-bottom:0.8rem">Langages statistiques & programmation</div>
+  <div class="logiciel-grid">
+    <div class="logiciel-card">
+      <div class="logiciel-name">R</div>
+      <div class="logiciel-level" style="color:var(--accent)">Avancé</div>
+      <div class="level-bar"><div class="level-fill" style="width:85%"></div></div>
+    </div>
+    <div class="logiciel-card">
+      <div class="logiciel-name">R Shiny</div>
+      <div class="logiciel-level" style="color:var(--accent)">Intermédiaire+</div>
+      <div class="level-bar"><div class="level-fill" style="width:72%"></div></div>
+    </div>
+    <div class="logiciel-card">
+      <div class="logiciel-name">R Markdown / Quarto</div>
+      <div class="logiciel-level" style="color:var(--accent)">Intermédiaire+</div>
+      <div class="level-bar"><div class="level-fill" style="width:75%"></div></div>
+    </div>
+    <div class="logiciel-card">
+      <div class="logiciel-name">Python</div>
+      <div class="logiciel-level" style="color:var(--accent2)">Intermédiaire</div>
+      <div class="level-bar"><div class="level-fill" style="width:60%"></div></div>
+    </div>
+    <div class="logiciel-card">
+      <div class="logiciel-name">SQL</div>
+      <div class="logiciel-level" style="color:var(--accent)">Intermédiaire+</div>
+      <div class="level-bar"><div class="level-fill" style="width:70%"></div></div>
+    </div>
+    <div class="logiciel-card">
+      <div class="logiciel-name">SAS Base</div>
+      <div class="logiciel-level" style="color:var(--accent2)">Intermédiaire</div>
+      <div class="level-bar"><div class="level-fill" style="width:60%"></div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="eyebrow" style="margin-bottom:0.8rem">Bases de données & BI</div>
+  <div class="logiciel-grid">
+    <div class="logiciel-card">
+      <div class="logiciel-name">Power BI</div>
+      <div class="logiciel-level" style="color:var(--accent)">Intermédiaire+</div>
+      <div class="level-bar"><div class="level-fill" style="width:72%"></div></div>
+    </div>
+    <div class="logiciel-card">
+      <div class="logiciel-name">SAS Visual Analytics</div>
+      <div class="logiciel-level" style="color:var(--accent2)">Intermédiaire</div>
+      <div class="level-bar"><div class="level-fill" style="width:60%"></div></div>
+    </div>
+    <div class="logiciel-card">
+      <div class="logiciel-name">Access / SQL Server</div>
+      <div class="logiciel-level" style="color:var(--accent2)">Intermédiaire</div>
+      <div class="level-bar"><div class="level-fill" style="width:62%"></div></div>
+    </div>
+    <div class="logiciel-card">
+      <div class="logiciel-name">Excel</div>
+      <div class="logiciel-level" style="color:var(--accent)">Avancé</div>
+      <div class="level-bar"><div class="level-fill" style="width:80%"></div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="eyebrow" style="margin-bottom:0.8rem">Méthodes statistiques</div>
+  <div class="comp-tags" style="margin-top:0">
+    <span class="tag">Statistique descriptive</span>
+    <span class="tag">Régression linéaire / multiple</span>
+    <span class="tag">ACP / ACM</span>
+    <span class="tag">Tests d'hypothèses</span>
+    <span class="tag">Intervalles de confiance</span>
+    <span class="tag">Sélection de modèles (AIC, BIC, RMSE)</span>
+    <span class="tag">Séries temporelles</span>
+    <span class="tag">Techniques de sondage</span>
+    <span class="tag">Datavisualisation (ggplot2, plotly)</span>
+    <span class="tag">Classification</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ALTERNANCE ═══════════════════════════════ -->
+<div class="page" id="page-alternance">
+  <div class="eyebrow">Expérience professionnelle</div>
+  <h1>Alternance</h1>
+  <p>Mon alternance s'est déroulée sur l'ensemble de l'année universitaire au sein d'un service actuariat, dans un environnement de données assurantielles complexes.</p>
+
+  <div class="divider"></div>
+
+  <div class="stage-header">
+    <div>
+      <div class="stage-company">MMA</div>
+      <div style="color:var(--text-muted);margin-bottom:0.4rem">Actuariat — Marché LARD</div>
+      <div class="stage-meta">Alternance · Année universitaire complète</div>
+    </div>
+    <div class="stage-badge">
+      Alternant<br>Actuariat
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h3>🏷️ Contexte & Périmètre</h3>
+    <p>Intégration au sein du service actuariat de MMA, compagnie d'assurance du groupe Covéa, sur le marché <strong style="color:var(--text)">LARD (Loisirs, Associations et Risques Divers)</strong>. Ce marché couvre un périmètre varié : associations sportives et de loisirs, structures de loisirs (bowlings, kartings), mais aussi d'autres structures comme des écoles ou des crèches.</p>
+  </div>
+
+  <div class="section-block">
+    <h3>🗃️ Construction des bases de données sous SAS</h3>
+    <p>Conception et alimentation de trois bases de données structurées en SAS Base, constituant le socle analytique des tableaux de bord :</p>
+    <div class="db-grid">
+      <div class="db-card">
+        <div class="db-card-title" style="color:var(--accent)">Base Portefeuille / Production</div>
+        <p>Données des contrats en portefeuille et indicateurs de production — affaires nouvelles (AN) et affaires passées (AP) — pour le suivi de l'activité commerciale du marché LARD.</p>
+      </div>
+      <div class="db-card">
+        <div class="db-card-title" style="color:var(--accent2)">Base Résultats</div>
+        <p>Primes des contrats, ensemble des sinistres déclarés et réglés, permettant le calcul et le pilotage du ratio Sinistres/Primes (S/P) et la mesure de la rentabilité technique.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h3>📊 Réalisation de deux tableaux de bord SAS Visual Analytics</h3>
+    <p>À partir de ces bases, développement de deux tableaux de bord interactifs dans SAS Visual Analytics, destinés au pilotage du marché LARD :</p>
+    <div class="db-grid">
+      <div class="db-card">
+        <div class="db-card-title" style="color:var(--accent3)">TdB 1 — Portefeuille & Production</div>
+        <p>Suivi du portefeuille en cours, évolution des AN/AP, répartition par catégorie de risque (sportif, école, crèche…), taux de rétention et indicateurs commerciaux clés.</p>
+      </div>
+      <div class="db-card">
+        <div class="db-card-title" style="color:#fb923c">TdB 2 — Résultats & S/P</div>
+        <p>Analyse de la sinistralité, suivi du ratio Sinistres/Primes par segment, décomposition des charges sinistres, pilotage de la rentabilité technique du portefeuille LARD.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h3>🎯 Compétences mobilisées</h3>
+    <div class="comp-tags" style="margin-top:0">
+      <span class="tag">SAS Base (DATA step, PROC)</span>
+      <span class="tag">SAS Visual Analytics</span>
+      <span class="tag">Modélisation de bases de données</span>
+      <span class="tag">Actuariat non-vie</span>
+      <span class="tag">Ratio S/P</span>
+      <span class="tag">Datavisualisation BI</span>
+      <span class="tag">Pilotage de portefeuille</span>
+      <span class="tag">Analyse de sinistralité</span>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h3>💡 Apports de l'alternance</h3>
+    <p>Cette expérience m'a permis d'appliquer les méthodes apprises en formation sur des données réelles et volumineuses dans un contexte professionnel exigeant. J'ai renforcé ma maîtrise de SAS, développé une vision métier de l'actuariat non-vie et appris à construire des outils décisionnels répondant à des besoins opérationnels précis.</p>
+  </div>
+</div>
+
+<footer>
+  © 2025–2026 Lucas Poirier · BUT Science des Données · Parcours EMS
+</footer>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+</script>
+
+</body>
+</html>
