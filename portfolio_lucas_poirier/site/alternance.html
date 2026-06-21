@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Poirier — Alternance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Anton&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/animations.css">
+</head>
+<body>
+
+<div class="loader">
+  <div class="txt"></div>
+  <div class="bar"><div class="fill"></div></div>
+</div>
+<div class="cutin"></div>
+<div class="corner"></div>
+
+<nav>
+  
+  <ul class="nav-links">
+    <li><a href="accueil.html">Accueil</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="projets.html">Projets</a></li>
+    <li><a href="logiciels.html">Logiciels</a></li>
+    <li><a href="alternance.html" class="active">Alternance</a></li>
+  </ul>
+</nav>
+
+<div class="page active">
+  <div class="eyebrow">Expérience professionnelle</div>
+  <h1>Alternance</h1>
+  <p>Mon alternance s'est déroulée sur l'ensemble de l'année universitaire au sein d'un service actuariat, dans un environnement de données assurantielles complexes.</p>
+
+  <div class="divider"></div>
+
+  <div class="stage-header">
+    <div style="display:flex; align-items:center; gap:1.2rem;">
+      <img src="../images/mma_logo.jpg" alt="Logo MMA — Groupe Covéa" style="height:48px; width:auto; background:#fff; border-radius:8px; padding:0.4rem 0.6rem;">
+      <div>
+        <div class="stage-company">MMA</div>
+        <div style="color:var(--text-muted);margin-bottom:0.4rem">Actuariat — Marché LARD</div>
+        <div class="stage-meta">Alternance · Année universitaire complète</div>
+      </div>
+    </div>
+    <div class="stage-badge">Alternant<br>Actuariat</div>
+  </div>
+
+  <div class="section-block">
+    <h3>Présentation de l'entreprise</h3>
+    <p>MMA est une marque du groupe d'assurance mutualiste <strong>Covéa</strong>, qui réunit également MAAF et GMF. Fort de près de deux siècles d'histoire, MMA est aujourd'hui le deuxième assureur des professionnels et des entreprises en France, avec une offre couvrant les risques professionnels, les risques d'entreprise, les dommages aux biens, l'épargne et l'assurance vie, ainsi que la santé et la prévoyance.</p>
+    <p>À l'échelle du groupe, Covéa est un leader européen de l'assurance et de la réassurance, fort d'environ 25 000 collaborateurs et de plus de 11 millions de clients et sociétaires en France. Le groupe s'appuie sur sa filiale PartnerRe pour la réassurance à l'international et revendique une solidité financière reconnue dans le secteur.</p>
+    <p>C'est au sein du service actuariat de MMA que mon alternance s'est déroulée, sur un marché spécifique nécessitant une bonne compréhension des enjeux métier autant que des compétences techniques en traitement de données.</p>
+  </div>
+
+  <div class="section-block">
+    <h3>Contexte & Périmètre</h3>
+    <p>Intégration au sein du service actuariat de MMA, compagnie d'assurance du groupe Covéa, sur le marché <strong>LARD (Loisirs, Associations et Risques Divers)</strong>. Parmi les différents marchés couverts par MMA, le marché LARD se distingue par une très grande diversité d'acteurs : associations sportives et de loisirs, structures de loisirs (bowlings, kartings, parcs d'attractions), mais aussi établissements scolaires comme des écoles primaires ou des crèches.</p>
+    <p>Cette diversité est renforcée par la densité du réseau associatif en France, qui compte environ <strong>1,5 million d'associations</strong> proposant des activités très variées, créant ainsi une forte hétérogénéité parmi les organisations composant ce marché. Ces structures sont confrontées à des risques spécifiques, notamment en <strong>responsabilité civile (RC)</strong> et en <strong>dommages aux biens (DAB)</strong>.</p>
+    <p>Pour MMA, bien connaître les activités composant ce marché constitue un enjeu majeur : une meilleure compréhension de la nature de ces activités permet de mieux mesurer les risques encourus par les organisations assurées, et donc de mieux couvrir les clients en cas de sinistre. C'est dans cette optique qu'intervient le service actuariat, en contribuant à la <strong>tarification des contrats</strong>, à l'<strong>évaluation des risques assurantiels</strong> et au <strong>pilotage de la rentabilité</strong> à l'aide d'outils statistiques — notamment le ratio <strong>Sinistres/Primes (S/P)</strong>, principal indicateur de rentabilité technique utilisé sur ce marché.</p>
+    <p>Pour mener à bien ce travail, des outils de pilotage de type datavisualisation sont développés. Ils offrent des solutions d'aide à la décision en valorisant des données récoltées et assemblées à partir de différentes bases, dont la fiabilité conditionne directement la pertinence des outils qui en découlent. C'est dans ce cadre que s'est déroulée cette première année d'alternance au sein de MMA.</p>
+  </div>
+
+  <div class="section-block">
+    <h3>Construction des bases de données sous SAS</h3>
+    <p>Conception et alimentation de trois bases de données structurées en SAS Base, constituant le socle analytique des tableaux de bord :</p>
+    <div class="db-grid">
+      <div class="db-card">
+        <div class="db-card-title" style="color:var(--noir)">Base Portefeuille / Production</div>
+        <p>Données des contrats en portefeuille et indicateurs de production — affaires nouvelles (AN) et affaires passées (AP) — pour le suivi de l'activité commerciale du marché LARD.</p>
+      </div>
+      <div class="db-card">
+        <div class="db-card-title" style="color:var(--noir)">Base Résultats</div>
+        <p>Primes des contrats, ensemble des sinistres déclarés et réglés, permettant le calcul et le pilotage du ratio Sinistres/Primes (S/P) et la mesure de la rentabilité technique.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h3>Réalisation de deux tableaux de bord SAS Visual Analytics</h3>
+    <p>À partir de ces bases, développement de deux tableaux de bord interactifs dans SAS Visual Analytics, destinés au pilotage du marché LARD :</p>
+    <div class="db-grid">
+      <div class="db-card">
+        <div class="db-card-title" style="color:var(--noir)">TdB 1 — Portefeuille & Production</div>
+        <p>Suivi du portefeuille en cours, évolution des AN/AP, répartition par catégorie de risque (sportif, école, crèche…), taux de rétention et indicateurs commerciaux clés.</p>
+      </div>
+      <div class="db-card">
+        <div class="db-card-title" style="color:var(--noir)">TdB 2 — Résultats & S/P</div>
+        <p>Analyse de la sinistralité, suivi du ratio Sinistres/Primes par segment, décomposition des charges sinistres, pilotage de la rentabilité technique du portefeuille LARD.</p>
+      </div>
+    </div>
+    <div class="proof-gallery" style="margin-top:1rem">
+      <div class="proof-card">
+        <img src="../images/tdb_portefeuille.png" onclick="openLightbox(this.src)" alt="Tableau de bord Portefeuille et Production SAS Visual Analytics">
+        <div class="proof-caption">TdB Portefeuille & Production — vision globale du portefeuille en cours, répartition par activité et évolution sur 5 ans</div>
+      </div>
+      <div class="proof-card">
+        <img src="../images/tdb_resultats.png" onclick="openLightbox(this.src)" alt="Tableau de bord Résultats et ratio S/P SAS Visual Analytics">
+        <div class="proof-caption">TdB Résultats — analyse de la sinistralité, ratio Sinistres/Primes par segment et suivi des contrats</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h3>Compétences mobilisées</h3>
+    <div class="logiciel-grid" style="margin-top:0">
+      <div class="logiciel-card"><div class="logiciel-name">SAS Base (DATA step, PROC)</div></div>
+      <div class="logiciel-card"><div class="logiciel-name">SAS Visual Analytics</div></div>
+      <div class="logiciel-card"><div class="logiciel-name">Modélisation de bases de données</div></div>
+      <div class="logiciel-card"><div class="logiciel-name">Actuariat non-vie</div></div>
+      <div class="logiciel-card"><div class="logiciel-name">Ratio S/P</div></div>
+      <div class="logiciel-card"><div class="logiciel-name">Datavisualisation BI</div></div>
+      <div class="logiciel-card"><div class="logiciel-name">Pilotage de portefeuille</div></div>
+      <div class="logiciel-card"><div class="logiciel-name">Analyse de sinistralité</div></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h3>Découverte du domaine de l'assurance</h3>
+    <p>Le secteur de l'assurance constituait un domaine inconnu en amont de l'alternance. Cette immersion a permis de comprendre le fonctionnement d'un contrat d'assurance, les différentes garanties proposées, ainsi que la diversité des activités pouvant être souscrites sur le marché LARD. Elle a également permis d'appréhender la logique de fonctionnement des bases de données utilisées pour recueillir les informations de souscription et de gestion des sinistres.</p>
+  </div>
+
+  <div class="section-block">
+    <h3>Prise en main de SAS Visual Analytics</h3>
+    <p>L'alternance a été l'occasion de découvrir SAS Visual Analytics, un logiciel de datavisualisation comparable à Power BI vu en formation, et d'en comprendre le fonctionnement ainsi que l'architecture. Des phases de test ont été menées pour optimiser les rapports, notamment pour déterminer s'il était préférable de s'appuyer sur des bases séparées ou sur des bases agrégées.</p>
+    <p>Pour le développement des tableaux de bord, des rapports déjà existants sur d'autres marchés ont servi de modèles afin de conserver les mêmes logiques de construction et la même charte graphique de l'entreprise, tout en partant d'une page vierge pour le marché LARD.</p>
+  </div>
+
+  <div class="section-block">
+    <h3>Reprise et documentation de programmes SAS</h3>
+    <p>En parallèle, un travail de reprise, modification, adaptation et complément de programmes SAS existants a été réalisé, avec une vérification systématique de la bonne alimentation des données et de l'absence de données manquantes. Une documentation a également été produite, notamment pour tracer l'origine de données techniques telles que le numéro SIRET ou l'activité du contrat.</p>
+  </div>
+
+  <div class="section-block">
+    <h3>Bilan de la première année d'alternance</h3>
+    <p>Cette première année d'alternance chez MMA a constitué une expérience enrichissante, tant sur le plan professionnel que personnel. Sur le plan professionnel, elle a permis de compléter les compétences acquises en formation par de nouveaux apprentissages, qu'il s'agisse du métier de l'assurance, de la prise en main d'un nouvel outil de datavisualisation, ou de la reprise de programmes existants. MMA a constitué à ce titre un cadre de travail et d'apprentissage propice à cette montée en compétences.</p>
+    <p>Un point d'amélioration identifié concerne le contact avec les autres membres de l'équipe, chacun étant réparti dans des bureaux différents au sein de l'entreprise, ce qui a pu limiter les échanges informels au quotidien.</p>
+    <p>Sur le plan personnel, cette année a permis de développer la prise d'initiative et l'autonomie au quotidien. Des marges de progression demeurent, notamment en matière de communication et de rigueur dans le travail, deux axes sur lesquels des progrès ont déjà pu être constatés au fil de l'année. La deuxième année d'alternance, qui s'inscrira dans la continuité de cette expérience au sein de MMA, devrait permettre de poursuivre cette progression.</p>
+  </div>
+</div>
+
+<footer>© 2025–2026 Lucas Poirier</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
