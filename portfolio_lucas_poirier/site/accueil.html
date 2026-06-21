@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Poirier — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Anton&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/animations.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader">
+  <div class="txt">Portfolio Lucas Poirier</div>
+  <div class="bar"><div class="fill"></div></div>
+</div>
+<!-- Cut-in transition -->
+<div class="cutin"></div>
+<!-- Coin décoratif -->
+<div class="corner"></div>
+
+<nav>
+  
+  <ul class="nav-links">
+    <li><a href="accueil.html" class="active">Accueil</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="projets.html">Projets</a></li>
+    <li><a href="logiciels.html">Logiciels</a></li>
+    <li><a href="alternance.html">Alternance</a></li>
+  </ul>
+</nav>
+
+<div class="page active">
+  <div class="hero">
+    <div class="hero-tag">BUT Science des Données · Parcours EMS · 2ème année</div>
+    <h1>Lucas Poirier</h1>
+    <p>
+      Étudiant en <strong>BUT Science des Données</strong> à l'IUT, spécialisation
+      <strong>Exploration et Modélisation Statistique</strong>. Je développe des compétences en
+      modélisation statistique, traitement de données, analyse décisionnelle et datavisualisation
+      à travers des projets académiques et une alternance en actuariat.
+    </p>
+    <p>
+      Passionné par l'analyse de données dans des domaines variés — assurance, économie, sciences —
+      j'utilise R, Python, SQL, SAS, Access et Power BI pour extraire de la valeur des données complexes.
+      Ce portfolio détaille, pour chaque projet, la démarche suivie, les compétences précisément
+      développées et les preuves concrètes de réalisation.
+    </p>
+    <div class="contact-line">
+      <a href="mailto:lucas-poirier@hotmail.fr">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        lucas-poirier@hotmail.fr
+      </a>
+      <a href="https://lucas-poirier.shinyapps.io/Satisfaction_Passagers_Aerien/" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        App R Shiny
+      </a>
+    </div>
+  </div>
+
+  <div class="eyebrow">Navigation</div>
+  <div class="card-grid">
+    <a class="card" href="competences.html">
+      <h3>Compétences</h3>
+      <p>4 compétences du référentiel BUT SD parcours EMS et leur progression</p>
+    </a>
+    <a class="card" href="projets.html">
+      <h3>Projets</h3>
+      <p>SAÉ détaillées : démarche, compétences développées, preuves</p>
+    </a>
+    <a class="card" href="logiciels.html">
+      <h3>Logiciels</h3>
+      <p>Outils et langages maîtrisés en science des données</p>
+    </a>
+    <a class="card" href="alternance.html">
+      <h3>Alternance</h3>
+      <p>MMA — Actuariat & tableaux de bord SAS VA</p>
+    </a>
+  </div>
+</div>
+
+<footer>© 2025–2026 Lucas Poirier</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
