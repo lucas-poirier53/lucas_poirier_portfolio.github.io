@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Poirier — Projets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Anton&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/animations.css">
+</head>
+<body>
+
+<div class="loader">
+  <div class="txt"></div>
+  <div class="bar"><div class="fill"></div></div>
+</div>
+<div class="cutin"></div>
+<div class="corner"></div>
+
+<nav>
+  
+  <ul class="nav-links">
+    <li><a href="accueil.html">Accueil</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="projets.html" class="active">Projets</a></li>
+    <li><a href="logiciels.html">Logiciels</a></li>
+    <li><a href="alternance.html">Alternance</a></li>
+  </ul>
+</nav>
+
+<div class="page active">
+  <div class="eyebrow">Situations d'Apprentissage et d'Évaluation</div>
+  <h1>Projets</h1>
+  <p>Pour chaque SAÉ : la démarche suivie, les compétences précisément mobilisées et les preuves concrètes de réalisation. Cliquez sur un projet pour le déplier.</p>
+
+  <div class="divider"></div>
+
+  <!-- ════ SAÉ 1.06 ════ -->
+  <div class="projet-item" id="proj-106">
+    <div class="projet-summary" onclick="toggleProject('proj-106')">
+      <div class="projet-header">
+        <div>
+          <h2>Mise en œuvre d'une enquête</h2>
+        </div>
+        <div class="projet-links">
+          <span class="expand-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Détails</span>
+        </div>
+      </div>
+      <p>Conception d'un questionnaire pour un CPIE (Centre Permanent d'Initiatives pour l'Environnement), collecte et traitement des réponses, analyse des résultats par tranche d'âge et restitution avec visualisations adaptées.</p>
+      <div class="skill-badges">
+        <span class="badge purple">Analyser</span>
+        <span class="badge green">Valoriser</span>
+        <span class="badge orange">Sondage</span>
+      </div>
+    </div>
+    <div class="projet-detail">
+      <div class="detail-inner">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'proj-106','demarche')">Démarche</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-106','competences')">Compétences développées</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-106','preuves')">Preuves</button>
+        </div>
+        <div class="tab-panel active" data-tab="demarche">
+          <div class="detail-block">
+            <h3>Présentation générale</h3>
+            <p>Ce projet consistait à <strong>concevoir et mettre en œuvre une enquête</strong> pour le compte d'un CPIE (Centre Permanent d'Initiatives pour l'Environnement), qui souhaitait mieux connaître son public et ses non-publics afin d'ajuster sa stratégie de communication et d'animation.</p>
+            <p>Nous avons été confrontés à des situations concrètes de <strong>construction d'un protocole de collecte</strong> : définition des objectifs avec le commanditaire, rédaction d'un questionnaire évitant les biais de formulation, diffusion auprès de différentes tranches d'âge, puis collecte des réponses.</p>
+            <p>Nous avons ensuite mené le <strong>traitement statistique</strong> des résultats en croisant les réponses avec la variable âge, avant de procéder à une <strong>restitution adaptée à un public non technicien</strong>, sous forme de graphiques en barres empilées en pourcentage.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Présentation individuelle</h3>
+            <p>Durant ce projet, j'ai pris en charge plusieurs tâches essentielles :</p>
+            <p><strong>Tâches principales</strong></p>
+            <ul>
+              <li>Participation à la <strong>construction du questionnaire</strong>, avec le choix d'échelles de Likert à 4 niveaux pour éviter l'effet de neutralité</li>
+              <li><strong>Traitement statistique</strong> des réponses et croisement avec la variable tranche d'âge</li>
+              <li>Réalisation des <strong>graphiques de restitution</strong> sous forme de barres empilées en pourcentage</li>
+            </ul>
+            <p><strong>Tâches secondaires</strong></p>
+            <ul>
+              <li>Diffusion du questionnaire et collecte des réponses</li>
+              <li>Rédaction de ma partie de projet pour le rapport final</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="competences">
+          <div class="detail-block">
+            <h3>Compétence ciblée — Valoriser une production dans un contexte professionnel</h3>
+            <p>Ce projet m'a permis de développer mes compétences en <strong>construction et restitution d'une enquête</strong> auprès d'un commanditaire associatif.</p>
+            <ul>
+              <li>J'ai appris à <strong>identifier les biais</strong> liés à la formulation des questions et au choix des échelles de réponse.</li>
+              <li>Contextualiser des données issues d'une collecte par questionnaire avant de les analyser.</li>
+              <li><strong>Choisir une forme de restitution adaptée</strong> à un public non spécialiste de la statistique.</li>
+              <li>Mettre en évidence des résultats clés à l'aide d'indicateurs pertinents (taux de connaissance par tranche d'âge).</li>
+            </ul>
+            <p>Cette expérience m'a également permis d'approfondir mes connaissances sur les <strong>spécificités de la donnée d'enquête</strong> et la différence entre la question posée et la variable analysée.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Apprentissage et bénéfices</h3>
+            <p>Suite à ce projet, j'ai renforcé mes compétences dans :</p>
+            <ul>
+              <li><strong>La construction d'un protocole de collecte fiable</strong>, par une formulation de questions non biaisées.</li>
+              <li><strong>La vulgarisation de résultats statistiques</strong> pour un public non technicien.</li>
+              <li><strong>L'explicitation de la démarche suivie</strong> lors de la restitution des résultats.</li>
+            </ul>
+            <p><strong>Apprentissage critique associé :</strong></p>
+            <ul>
+              <li>AC13.01 : Prendre connaissance des biais rencontrés dans la mise en place d'une enquête</li>
+              <li>AC13.02 : Identifier l'importance de contextualiser ses données</li>
+              <li>AC13.04 : Lors de la restitution des résultats, mesurer l'importance d'expliciter également la démarche suivie</li>
+              <li>AC13.05 : Comprendre les intérêts de la data visualisation et de l'infographie</li>
+              <li>AC13.06 : Mesurer l'importance d'une expression précise et nuancée dans la communication des résultats</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="preuves">
+          <div class="proof-gallery">
+            <div class="proof-card">
+              <img src="../images/enquete_questionnaire.png" onclick="openLightbox(this.src)" alt="Extrait du questionnaire CPIE">
+              <div class="proof-caption">Extrait du questionnaire — échelles de satisfaction et motivations</div>
+            </div>
+            <div class="proof-card">
+              <img src="../images/enquete_resultats.png" onclick="openLightbox(this.src)" alt="Résultats par tranche d'âge">
+              <div class="proof-caption">Connaissance du CPIE par tranche d'âge — résultats de l'enquête</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SAÉ 2.01 ════ -->
+  <div class="projet-item" id="proj-201">
+    <div class="projet-summary" onclick="toggleProject('proj-201')">
+      <div class="projet-header">
+        <div>
+          <h2>Conception et implémentation d'une base de données</h2>
+        </div>
+        <div class="projet-links">
+          <span class="expand-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Détails</span>
+        </div>
+      </div>
+      <p>Projet Compudistri : conception du dictionnaire des données, modélisation du schéma relationnel sous Looping et IBeasy+, import sur Access, rédaction de 42 requêtes SQL pour interroger les articles, clients, fournisseurs et factures.</p>
+      <div class="skill-badges">
+        <span class="badge">Traiter</span>
+        <span class="badge orange">SQL</span>
+        <span class="badge orange">Access</span>
+        <span class="badge orange">Modélisation BDD</span>
+      </div>
+    </div>
+    <div class="projet-detail">
+      <div class="detail-inner">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'proj-201','demarche')">Démarche</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-201','competences')">Compétences développées</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-201','preuves')">Preuves</button>
+        </div>
+        <div class="tab-panel active" data-tab="demarche">
+          <div class="detail-block">
+            <h3>Présentation générale</h3>
+            <p>Ce projet consistait à <strong>créer une base de données relationnelle</strong> pour une entreprise fictive de distribution de composants informatiques, Compudistri, qui souhaitait informatiser la gestion de ses articles, clients, fournisseurs et factures.</p>
+            <p>Par équipe de 4, nous avons été confrontés à des situations concrètes de <strong>mise en place d'une base de données</strong> répondant aux besoins de l'organisation.</p>
+            <p>Nous avons suivi différentes étapes afin de <strong>construire une base de données</strong>, avec une réflexion sur la modélisation des données en vue de leur utilisation, l'implémentation de la base de données, ainsi que son alimentation.</p>
+            <p>En effet, nous avons eu une réflexion afin de pouvoir <strong>créer un dictionnaire de données</strong> suivant différentes règles que l'on a respectées. Par la suite, nous avons effectué des <strong>productions de schémas relationnels</strong> afin de visualiser de façon claire la répartition des données. En outre, nous avons <strong>implanté les données dans un logiciel spécifique</strong> afin d'obtenir une réalisation claire répondant à notre problématique.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Présentation individuelle</h3>
+            <p>Durant ce projet, j'ai pris en charge plusieurs tâches essentielles :</p>
+            <p><strong>Tâches principales</strong></p>
+            <ul>
+              <li>Réalisation du <strong>dictionnaire des données</strong> du cas d'étude</li>
+              <li>Prise en main du logiciel IBeasy+, sur lequel j'ai réalisé le <strong>schéma relationnel</strong> en tenant compte des règles métier et des cardinalités</li>
+              <li><strong>Fusion des schémas relationnels</strong> issus des deux binômes (Looping et IBeasy+) avec mon binôme</li>
+              <li>Import des données dans le logiciel <strong>Access</strong></li>
+            </ul>
+            <p><strong>Tâches secondaires</strong></p>
+            <ul>
+              <li>Relecture des 42 requêtes SQL rédigées par le binôme Looping</li>
+              <li>Rédaction de ma partie de projet pour le rapport final</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="competences">
+          <div class="detail-block">
+            <h3>Compétence ciblée — Traiter des données structurées</h3>
+            <p>Ce projet m'a permis de développer mes compétences en <strong>conception et gestion de bases de données relationnelles</strong>.</p>
+            <ul>
+              <li>J'ai appris à <strong>analyser les besoins</strong> d'un commanditaire pour proposer une modélisation adaptée et structurée.</li>
+              <li>Construire un <strong>dictionnaire de données</strong> en respectant les règles métiers et de gestion.</li>
+              <li><strong>Implémenter une base de données</strong> dans un logiciel dédié en définissant ses clés primaires et étrangères ainsi que les relations entre les tables.</li>
+              <li>Adapter un modèle conceptuel des données en fonction des contraintes techniques et métiers.</li>
+            </ul>
+            <p>Cette expérience m'a également permis d'approfondir mes connaissances sur les <strong>formalismes de notation et la syntaxe des langages de bases de données</strong> (SQL).</p>
+          </div>
+          <div class="detail-block">
+            <h3>Apprentissage et bénéfices</h3>
+            <p>Suite à ce projet, j'ai renforcé mes compétences dans :</p>
+            <ul>
+              <li><strong>L'analyse des besoins</strong> et la traduction de ceux-ci en un modèle de données exploitable.</li>
+              <li><strong>L'optimisation de l'exploitation des données</strong> en assurant leur cohérence et leur intégrité.</li>
+              <li><strong>L'importance de la programmation</strong> pour automatiser la gestion et le traitement des données.</li>
+            </ul>
+            <p><strong>Apprentissage critique associé :</strong></p>
+            <ul>
+              <li>AC1 : Correctement interpréter et prendre en compte le besoin du commanditaire ou du client</li>
+              <li>AC2 : Respecter les formalismes de notation</li>
+              <li>AC3 : Connaître la syntaxe des langages et savoir l'utiliser</li>
+              <li>AC4 : Mesurer l'importance de maîtriser la structure des données à exploiter</li>
+              <li>AC5 : Comprendre les structures algorithmiques de base et leur contexte d'usage</li>
+              <li>AC6 : Prendre conscience de l'intérêt de la programmation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="preuves">
+          <div class="proof-gallery">
+            <div class="proof-card">
+              <img src="../images/sae201.png" onclick="openLightbox(this.src)" alt="Schéma relationnel Access Compudistri">
+              <div class="proof-caption">Schéma relationnel final sous Access — entités Réception, Article, Facture, Clients, Fournisseurs, Employé</div>
+            </div>
+            <div class="proof-card">
+              <img src="../images/sae201_2.png" onclick="openLightbox(this.src)" alt="Dictionnaire des données Access">
+              <div class="proof-caption">Dictionnaire des données — table Employé, types et descriptions des champs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ════ SAÉ 203 ════ -->
+  <div class="projet-item" id="proj-203">
+    <div class="projet-summary" onclick="toggleProject('proj-203')">
+      <div class="projet-header">
+        <div>
+          <h2>Régression sur données réelles</h2>
+        </div>
+        <div class="projet-links">
+          <span class="expand-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Détails</span>
+        </div>
+      </div>
+      <p>Étude statistique de l'insertion professionnelle des diplômés de Master : relation entre la part d'emplois stables par discipline et le salaire brut annuel estimé, avec construction d'intervalles de confiance.</p>
+      <div class="skill-badges">
+        <span class="badge orange">Modéliser</span>
+        <span class="badge purple">Analyser</span>
+        <span class="badge">Techniques de sondage</span>
+      </div>
+    </div>
+    <div class="projet-detail">
+      <div class="detail-inner">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'proj-203','demarche')">Démarche</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-203','competences')">Compétences développées</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-203','preuves')">Preuves</button>
+        </div>
+        <div class="tab-panel active" data-tab="demarche">
+          <div class="detail-block">
+            <h3>Présentation générale</h3>
+            <p>Pour cette SAÉ, il nous était demandé de <strong>choisir un sujet d'étude</strong> à partir d'un jeu de données réelles, afin de mettre en évidence un lien entre deux variables quantitatives par une démarche de régression. Notre groupe a choisi d'étudier <strong>l'insertion professionnelle des diplômés de Master</strong> en France, en s'intéressant à la relation entre la part d'emplois stables obtenus par discipline et le salaire brut annuel estimé.</p>
+            <p>Nous avons été confrontés à des situations concrètes de <strong>préparation et d'exploration de données réelles</strong>, avec une réflexion sur le choix des représentations graphiques et numériques permettant de décrire une variable puis de mettre en évidence une liaison entre deux variables.</p>
+            <p>Nous avons ensuite mené une démarche de <strong>comparaison d'ajustements</strong> (linéaire, lissage local, polynomial) afin de retenir le modèle le plus pertinent, en intégrant la variabilité d'échantillonnage par la construction d'intervalles de confiance.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Présentation individuelle</h3>
+            <p>Durant ce projet, j'ai pris en charge plusieurs tâches essentielles :</p>
+            <p><strong>Tâches principales</strong></p>
+            <ul>
+              <li>Étude de la <strong>distribution de la part d'emplois stables</strong> par discipline (histogramme)</li>
+              <li>Mise en relation graphique entre salaire et emploi stable, avec ajustement d'une <strong>droite de régression</strong> comparée à un lissage local</li>
+              <li>Ajustement d'un <strong>modèle polynomial de degré 2</strong> et analyse du nuage de résidus</li>
+            </ul>
+            <p><strong>Tâches secondaires</strong></p>
+            <ul>
+              <li>Construction des intervalles de confiance sur les estimateurs</li>
+              <li>Rédaction de ma partie de projet pour le rapport final</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="competences">
+          <div class="detail-block">
+            <h3>Compétence ciblée — Analyser statistiquement les données</h3>
+            <p>Ce projet m'a permis de développer mes compétences en <strong>analyse statistique sur données réelles</strong>.</p>
+            <ul>
+              <li>J'ai appris à <strong>décrire une distribution avant modélisation</strong>, en repérant une éventuelle asymétrie plutôt que d'appliquer un modèle linéaire par défaut.</li>
+              <li>Comparer un ajustement linéaire à un ajustement local pour juger de la pertinence d'un modèle plus complexe.</li>
+              <li><strong>Diagnostiquer la qualité d'un modèle par l'étude des résidus</strong>, en vérifiant l'homoscédasticité.</li>
+              <li>Tenir compte du contexte inférentiel par la construction d'intervalles de confiance.</li>
+            </ul>
+            <p>Cette expérience m'a également permis d'approfondir mes connaissances sur les <strong>synthèses numériques et graphiques</strong> permettant de décrire une variable et de mettre en évidence une liaison entre variables.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Apprentissage et bénéfices</h3>
+            <p>Suite à ce projet, j'ai renforcé mes compétences dans :</p>
+            <ul>
+              <li><strong>La lecture critique de représentations graphiques</strong> en amont d'une modélisation.</li>
+              <li><strong>La comparaison rigoureuse de plusieurs ajustements</strong> avant d'en retenir un.</li>
+              <li><strong>La prise en compte de la variabilité d'échantillonnage</strong> dans l'interprétation des résultats.</li>
+            </ul>
+            <p><strong>Apprentissage critique associé :</strong></p>
+            <ul>
+              <li>AC12.03 : Comprendre l'intérêt des synthèses numériques et graphiques pour décrire une variable statistique</li>
+              <li>AC12.04 : Comprendre l'intérêt des synthèses numériques et graphiques pour mettre en évidence des liaisons entre variables</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="preuves">
+          <div class="proof-gallery">
+            <div class="proof-card">
+              <img src="../images/sae203_histo.png" onclick="openLightbox(this.src)" alt="Histogramme part d'emplois stables">
+              <div class="proof-caption">Distribution de la part d'emplois stables par discipline</div>
+            </div>
+            <div class="proof-card">
+              <img src="../images/sae203_modelisation.png" onclick="openLightbox(this.src)" alt="Salaire vs emplois stables">
+              <div class="proof-caption">Salaire annuel estimé en fonction de la part d'emplois stables (régression linéaire vs lissage local)</div>
+            </div>
+            <div class="proof-card">
+              <img src="../images/sae203_residus.png" onclick="openLightbox(this.src)" alt="Graphe des résidus modèle degré 2">
+              <div class="proof-caption">Graphe des résidus du modèle polynomial de degré 2 — vérification de l'homoscédasticité</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SAÉ 2.06 ════ -->
+  <div class="projet-item" id="proj-206">
+    <div class="projet-summary" onclick="toggleProject('proj-206')">
+      <div class="projet-header">
+        <div>
+          <h2>Analyse de données, reporting et datavisualisation</h2>
+        </div>
+        <div class="projet-links">
+          <span class="expand-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Détails</span>
+        </div>
+      </div>
+      <p>Projet client réel pour <strong>Bricolib</strong>, plateforme de location d'outils entre particuliers : tableau de bord Power BI analysant les déséquilibres géographiques entre l'offre et la demande sur tout le territoire français.</p>
+      <div class="skill-badges">
+        <span class="badge">Traiter</span>
+        <span class="badge purple">Analyser</span>
+        <span class="badge green">Valoriser</span>
+        <span class="badge orange">Power BI</span>
+      </div>
+    </div>
+    <div class="projet-detail">
+      <div class="detail-inner">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'proj-206','demarche')">Démarche</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-206','competences')">Compétences développées</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-206','preuves')">Preuves</button>
+        </div>
+        <div class="tab-panel active" data-tab="demarche">
+          <div class="detail-block">
+            <h3>Présentation générale</h3>
+            <p>Ce projet consistait à répondre à une <strong>commande d'un client réel</strong>, Bricolib, plateforme de location d'outils entre particuliers, qui cherchait à identifier les zones où l'offre d'outils était insuffisante ou excédentaire par rapport à la demande, afin d'orienter sa stratégie d'acquisition d'outils et de communication ciblée.</p>
+            <p>Par équipe de 6, nous avons été confrontés à des situations concrètes de <strong>traitement, d'analyse et de valorisation de données</strong> à grande échelle (plus de 150 000 lignes réparties sur quatre fichiers : annonces, recherches, transactions et comptes utilisateurs).</p>
+            <p>Nous avons suivi différentes étapes afin de <strong>cadrer le besoin client</strong> via une carte d'empathie, <strong>nettoyer et structurer les données</strong> sous Excel puis Access, et <strong>construire un tableau de bord décisionnel</strong> sous Power BI intégrant cartes géographiques, indicateurs clés et filtres dynamiques. La restitution s'est faite auprès du client, accompagnée d'une notice utilisateur et d'un poster de synthèse.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Présentation individuelle</h3>
+            <p>Sur une équipe de 6 personnes, j'ai occupé le rôle de <strong>responsable tests</strong>, avec une implication forte dans la réalisation du tableau de bord compte tenu de mes compétences sur cet outil.</p>
+            <p><strong>Tâches principales</strong></p>
+            <ul>
+              <li>Participation au <strong>nettoyage des données</strong> (doublons, valeurs aberrantes, correction des noms de ville et d'outils)</li>
+              <li>Construction de visualisations sous <strong>Power BI</strong> (carte géographique, indicateurs, filtres dynamiques)</li>
+              <li><strong>Tests et vérifications</strong> du tableau de bord avant restitution au client</li>
+            </ul>
+            <p><strong>Tâches secondaires</strong></p>
+            <ul>
+              <li>Contribution à la note de cadrage et au diagramme de Gantt</li>
+              <li>Rédaction de ma partie de projet pour le rapport final</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="competences">
+          <div class="detail-block">
+            <h3>Compétence ciblée — Traiter, analyser et valoriser des données dans un contexte client</h3>
+            <p>Ce projet m'a permis de développer mes compétences sur <strong>l'ensemble de la chaîne décisionnelle</strong>, du traitement de la donnée brute jusqu'à sa restitution opérationnelle.</p>
+            <ul>
+              <li>J'ai appris à <strong>reformuler un besoin client flou</strong> en problématique actionnable.</li>
+              <li><strong>Nettoyer et fiabiliser des données réelles à grande échelle</strong>, en corrigeant les erreurs de saisie impactant la qualité de la géolocalisation.</li>
+              <li><strong>Construire un tableau de bord décisionnel multi-niveaux</strong>, pensé pour un usage stratégique par un non-spécialiste de la donnée.</li>
+              <li>Travailler en mode projet avec un client réel, dans le respect d'un cahier des charges et d'une démarche qualité.</li>
+            </ul>
+            <p>Cette expérience m'a également permis d'approfondir mes connaissances sur les <strong>outils de reporting et d'ETL</strong> (Power Query, Power BI).</p>
+          </div>
+          <div class="detail-block">
+            <h3>Apprentissage et bénéfices</h3>
+            <p>Suite à ce projet, j'ai renforcé mes compétences dans :</p>
+            <ul>
+              <li><strong>L'interdisciplinarité entre statistique et informatique décisionnelle</strong> au sein d'un même projet.</li>
+              <li><strong>La conduite de projet</strong> et la planification en équipe.</li>
+              <li><strong>La prise de conscience des problématiques de confidentialité</strong> des données.</li>
+            </ul>
+            <p><strong>Apprentissage critique associé :</strong></p>
+            <ul>
+              <li>AC11.01 : Correctement interpréter et prendre en compte le besoin du commanditaire ou du client</li>
+              <li>AC11.04 : Mesurer l'importance de maîtriser la structure des données à exploiter</li>
+              <li>AC12.02 : Comprendre qu'une analyse correcte ne peut émaner que de données propres et préparées</li>
+              <li>AC13.03 : Mesurer l'importance de mettre en évidence des résultats clés par l'utilisation d'indicateurs pertinents</li>
+              <li>AC13.05 : Comprendre les intérêts de la data visualisation et de l'infographie</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="preuves">
+          <div class="proof-gallery">
+            <div class="proof-card">
+              <img src="../images/sae206_annonces.png" onclick="openLightbox(this.src)" alt="Carte de France des annonces Bricolib">
+              <div class="proof-caption">Carte de France — répartition géographique des annonces d'outils par ville</div>
+            </div>
+            <div class="proof-card">
+              <img src="../images/sae206_tableau_bord.png" onclick="openLightbox(this.src)" alt="Tableau de bord Power BI Bricolib">
+              <div class="proof-caption">Tableau de bord Power BI — onglet "Analyse des annonces" : indicateurs, filtres et top outils</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- ════ SAÉ 4.EMS.01 — Boston Housing ════ -->
+  <div class="projet-item" id="proj-401">
+    <div class="projet-summary" onclick="toggleProject('proj-401')">
+      <div class="projet-header">
+        <div>
+          <h2>Expliquer ou prédire une variable quantitative à partir de plusieurs facteurs</h2>
+        </div>
+        <div class="projet-links">
+          <span class="expand-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Détails</span>
+        </div>
+      </div>
+      <p>Prédiction du prix médian des logements à Boston : analyse univariée et bivariée, construction de modèles de régression linéaire multiple, sélection par méthodes forward/backward/stepwise/exhaustive, évaluation par RMSE. Réalisé avec Q. Courson, C. Lesbastad, P. Uguen.</p>
+      <div class="skill-badges">
+        <span class="badge orange">Modéliser</span>
+        <span class="badge purple">Analyser</span>
+        <span class="badge">Régression multiple</span>
+        <span class="badge">R</span>
+      </div>
+    </div>
+    <div class="projet-detail">
+      <div class="detail-inner">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'proj-401','demarche')">Démarche</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-401','competences')">Compétences développées</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-401','preuves')">Preuves</button>
+        </div>
+        <div class="tab-panel active" data-tab="demarche">
+          <div class="detail-block">
+            <h3>Présentation générale</h3>
+            <p>Pour cette SAÉ, il nous était demandé de <strong>choisir un sujet d'étude</strong> mettant en œuvre la modélisation linéaire multivariée. Notre groupe (Q. Courson, C. Lesbastad, P. Uguen et moi-même) a choisi de travailler sur le jeu de données <strong>Boston Housing</strong>, qui décrit 506 zones urbaines de Boston à travers des caractéristiques socio-économiques, environnementales et structurelles, dans le but d'expliquer puis de prédire le prix médian des logements.</p>
+            <p>Nous avons été confrontés à des situations concrètes de <strong>préparation de données réelles</strong>, avec un travail de nettoyage des valeurs censurées, avant de mener une démarche de <strong>construction progressive de modèles de régression linéaire multiple</strong>, de la version la plus simple à la plus complète.</p>
+            <p>Nous avons ensuite procédé à une <strong>sélection de variables</strong> en comparant systématiquement quatre méthodes (forward, backward, stepwise, exhaustive), puis à la <strong>validation du modèle final</strong> retenu par l'étude des résidus et la significativité des coefficients, avant de traduire ce modèle en application décisionnelle.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Présentation individuelle</h3>
+            <p>Durant ce projet, j'ai pris en charge plusieurs tâches essentielles :</p>
+            <p><strong>Tâches principales</strong></p>
+            <ul>
+              <li><strong>Analyse exploratoire</strong> de la variable cible (prix médian) après retrait des valeurs censurées</li>
+              <li>Participation à la <strong>comparaison des méthodes de sélection</strong> de variables (forward, backward, stepwise, exhaustive)</li>
+              <li><strong>Validation du modèle final</strong> par vérification de l'homoscédasticité des résidus (test de Breusch-Pagan)</li>
+            </ul>
+            <p><strong>Tâches secondaires</strong></p>
+            <ul>
+              <li>Construction des profils-types de quartiers et calcul des intervalles de confiance et de prédiction</li>
+              <li>Rédaction de ma partie de projet pour le rapport final</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="competences">
+          <div class="detail-block">
+            <h3>Compétence ciblée — Modéliser les données dans un cadre statistique</h3>
+            <p>Ce projet m'a permis de développer mes compétences en <strong>modélisation linéaire multivariée</strong> sur des données réelles.</p>
+            <ul>
+              <li>J'ai appris à <strong>traiter les valeurs censurées</strong> avant modélisation, pour ne pas biaiser les coefficients de régression.</li>
+              <li><strong>Comparer rigoureusement plusieurs méthodes de sélection de modèle</strong> plutôt que de se fier à une seule approche, avec un critère de décision explicite (RMSE).</li>
+              <li><strong>Valider les hypothèses du modèle linéaire</strong>, notamment l'homoscédasticité des résidus.</li>
+              <li><strong>Traduire un modèle statistique en outil de décision</strong>, en distinguant intervalles de confiance et de prédiction.</li>
+            </ul>
+            <p>Cette expérience m'a également permis d'approfondir mes connaissances sur les <strong>conditions d'application et les limites de validité</strong> d'un modèle de régression.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Apprentissage et bénéfices</h3>
+            <p>Suite à ce projet, j'ai renforcé mes compétences dans :</p>
+            <ul>
+              <li><strong>La préparation des données</strong> en vue d'une modélisation statistique fiable.</li>
+              <li><strong>La confrontation d'une hypothèse à la réalité</strong> pour prendre une décision (tests statistiques).</li>
+              <li><strong>La rigueur de communication</strong> autour des résultats d'un modèle statistique.</li>
+            </ul>
+            <p><strong>Apprentissage critique associé :</strong></p>
+            <ul>
+              <li>AC22.01 : Prendre conscience de la différence entre modélisation statistique et analyse exploratoire</li>
+              <li>AC22.04 : Appréhender l'idée de confronter une hypothèse avec la réalité pour prendre une décision</li>
+              <li>AC22.05 : Apprécier les limites de validité et les conditions d'application d'une analyse</li>
+              <li>AC23.02 : Savoir défendre ses choix d'analyses</li>
+              <li>AC23.04 : Prendre conscience de la rigueur requise dans ses productions et dans la communication à leur propos</li>
+              <li>AC24.03EMS : Comprendre l'impact du type de données sur le choix de la modélisation à mettre en œuvre</li>
+              <li>AC24.04EMS : Apprécier les limites de validité et les conditions d'application d'un modèle</li>
+              <li>AC24.05EMS : Réaliser l'importance de la mise en œuvre d'une procédure de test statistique pour valider ou non une hypothèse</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="preuves">
+          <div class="proof-gallery">
+            <div class="proof-card">
+              <img src="../images/sae401.png" onclick="openLightbox(this.src)" alt="Distribution medv Boston">
+              <div class="proof-caption">Distribution du prix médian (medv) après retrait des valeurs censurées — histogramme et Q-Q plot</div>
+            </div>
+            <div class="proof-card">
+              <img src="../images/sae401_forrest_plot.png" onclick="openLightbox(this.src)" alt="Forest plot coefficients Boston">
+              <div class="proof-caption">Forest plot des coefficients standardisés du modèle final retenu (7 variables, toutes p&lt;0.001)</div>
+            </div>
+            <div class="proof-card">
+              <img src="../images/sae401_prix.png" onclick="openLightbox(this.src)" alt="Prédiction par profil de quartier">
+              <div class="proof-caption">Prix médian prédit par type de quartier — intervalles de confiance et de prédiction à 95%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SAÉ 4.02 — ACP R Shiny ════ -->
+  <div class="projet-item" id="proj-402">
+    <div class="projet-summary" onclick="toggleProject('proj-402')">
+      <div class="projet-header">
+        <div>
+          <h2>Reporting d'une analyse multivariée</h2>
+        </div>
+        <div class="projet-links">
+          <a class="btn-link" href="https://lucas-poirier.shinyapps.io/Satisfaction_Passagers_Aerien/" target="_blank" onclick="event.stopPropagation()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            App R Shiny
+          </a>
+          <span class="expand-toggle" onclick="toggleProject('proj-402');event.stopPropagation()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Détails
+          </span>
+        </div>
+      </div>
+      <p>Analyse en Composantes Principales (ACP) sur la satisfaction des passagers aériens. Application R Shiny interactive permettant d'explorer les résultats : graphes des individus et des variables, cercle des corrélations, choix du nombre d'axes, interprétation des composantes.</p>
+      <div class="skill-badges">
+        <span class="badge orange">Modéliser</span>
+        <span class="badge green">Valoriser</span>
+        <span class="badge">ACP</span>
+        <span class="badge">R Shiny</span>
+      </div>
+    </div>
+    <div class="projet-detail">
+      <div class="detail-inner">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'proj-402','demarche')">Démarche</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-402','competences')">Compétences développées</button>
+          <button class="tab-btn" onclick="switchTab(this,'proj-402','preuves')">Preuves</button>
+        </div>
+        <div class="tab-panel active" data-tab="demarche">
+          <div class="detail-block">
+            <h3>Présentation générale</h3>
+            <p>Pour cette SAÉ, il nous était proposé de <strong>choisir un sujet parmi six</strong> afin de réaliser une analyse en composantes principales (ACP) et d'en restituer les résultats au sein d'une application interactive. Nous avons choisi de travailler sur un jeu de données portant sur la <strong>satisfaction de plus de 120 000 passagers aériens</strong>, notant leur expérience de vol (confort, service à bord, WiFi, propreté, ponctualité...).</p>
+            <p>Nous avons été confrontés à des situations concrètes de <strong>préparation des données</strong> en amont de l'ACP, puis à la <strong>réalisation de l'analyse multivariée</strong> proprement dite, avec l'extraction des axes principaux et l'identification des variables contributives à chaque dimension.</p>
+            <p>Nous avons ensuite développé une <strong>application interactive sous R Shiny</strong>, et non un simple rapport statique, afin de restituer les résultats à un public métier capable d'explorer lui-même les axes et les profils de classes de voyage.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Présentation individuelle</h3>
+            <p>Durant ce projet, j'ai pris en charge plusieurs tâches essentielles :</p>
+            <p><strong>Tâches principales</strong></p>
+            <ul>
+              <li><strong>Réalisation de l'ACP</strong> et extraction des axes principaux</li>
+              <li>Calcul des <strong>coordonnées moyennes par classe de voyage</strong> sur chaque axe</li>
+              <li>Développement de l'<strong>application R Shiny</strong> (interface multi-onglets, sélection de l'axe et des classes à comparer)</li>
+            </ul>
+            <p><strong>Tâches secondaires</strong></p>
+            <ul>
+              <li>Réalisation du graphique radar comparant le profil de notes moyennes par classe</li>
+              <li>Rédaction de ma partie de projet pour le rapport final</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="competences">
+          <div class="detail-block">
+            <h3>Compétence ciblée — Valoriser une analyse multivariée dans une application interactive</h3>
+            <p>Ce projet m'a permis de développer mes compétences en <strong>analyse en composantes principales et restitution interactive</strong>.</p>
+            <ul>
+              <li>J'ai appris à <strong>interpréter la composition d'un axe d'ACP</strong>, en identifiant les variables contributrices et leur poids relatif.</li>
+              <li><strong>Construire une application interactive</strong> pour un public métier, au-delà du simple rapport statique.</li>
+              <li><strong>Choisir la bonne visualisation selon le message</strong> à transmettre (barres horizontales pour une opposition, radar pour un profil multidimensionnel).</li>
+              <li>Synthétiser l'information portée par plusieurs variables à l'aide d'une analyse multivariée.</li>
+            </ul>
+            <p>Cette expérience m'a également permis d'approfondir mes connaissances sur les <strong>méthodes factorielles</strong> et leur restitution à un public non spécialiste.</p>
+          </div>
+          <div class="detail-block">
+            <h3>Apprentissage et bénéfices</h3>
+            <p>Suite à ce projet, j'ai renforcé mes compétences dans :</p>
+            <ul>
+              <li><strong>La distinction entre modélisation statistique et analyse exploratoire.</strong></li>
+              <li><strong>La défense argumentée de mes choix d'analyses</strong> auprès d'un public métier.</li>
+              <li><strong>La rigueur dans la production et la communication</strong> de résultats statistiques.</li>
+            </ul>
+            <p><strong>Apprentissage critique associé :</strong></p>
+            <ul>
+              <li>AC21.05 : Apprécier l'intérêt de briques logicielles existantes et savoir les utiliser</li>
+              <li>AC22.01 : Prendre conscience de la différence entre modélisation statistique et analyse exploratoire</li>
+              <li>AC22.03 : Comprendre l'intérêt des analyses multivariées pour synthétiser et résumer l'information portée par plusieurs variables</li>
+              <li>AC22.05 : Apprécier les limites de validité et les conditions d'application d'une analyse</li>
+              <li>AC23.02 : Savoir défendre ses choix d'analyses</li>
+              <li>AC23.03 : Saisir la nécessité de choisir des indicateurs pertinents pour communiquer sur les résultats</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab="preuves">
+          <div class="proof-gallery">
+            <div class="proof-card">
+              <img src="../images/sae402_axes.png" onclick="openLightbox(this.src)" alt="Composition de l'axe ACP">
+              <div class="proof-caption">Application R Shiny — composition de l'axe 1 et projection des classes (Eco, Eco Plus, Business)</div>
+            </div>
+            <div class="proof-card">
+              <img src="../images/sae402_radar.png" onclick="openLightbox(this.src)" alt="Radar des notes moyennes">
+              <div class="proof-caption">Profil des notes — radar comparatif des scores moyens /5 par classe de voyage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2025–2026 Lucas Poirier</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
